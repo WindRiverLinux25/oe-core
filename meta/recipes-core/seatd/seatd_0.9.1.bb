@@ -6,10 +6,10 @@ LICENSE = "MIT"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=715a99d2dd552e6188e74d4ed2914d5a"
 
-SRC_URI = "git://git.sr.ht/~kennylevinsen/seatd;protocol=https;branch=master \
+SRC_URI = "https://git.sr.ht/~kennylevinsen/seatd/archive/${PV}.tar.gz;downloadfilename=${BP}.tar.gz \
            file://init"
-SRCREV = "566ffeb032af42865dc1210e48cec08368059bb9"
-S = "${WORKDIR}/git"
+
+SRC_URI[sha256sum] = "819979c922a0be258aed133d93920bce6a3d3565a60588d6d372ce9db2712cd3"
 
 inherit meson pkgconfig systemd update-rc.d useradd
 
