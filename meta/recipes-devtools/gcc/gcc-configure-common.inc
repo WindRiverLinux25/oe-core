@@ -73,6 +73,14 @@ SYSTEMHEADERS = "${target_includedir}"
 SYSTEMLIBS = "${target_base_libdir}/"
 SYSTEMLIBS1 = "${target_libdir}/"
 
+def tune_target_relocatable_prefix(d):
+    if d.getVar("SDK_ARCH") in ["x86_64", "i686", "i586"]:
+        return d.getVar("root_prefix")
+    else:
+        return d.getVar("SYSTEMLIBS")
+TARGET_RELOCATE_PREFIX = "${SYSTEMLIBS}"
+TARGET_RELOCATE_PREFIX:class-nativesdk = "${@tune_target_relocatable_prefix(d)}"
+
 do_configure:prepend () {
 	# teach gcc to find correct target includedir when checking libc ssp support
 	mkdir -p ${B}/gcc
@@ -83,6 +91,7 @@ do_configure:prepend () {
 #define STANDARD_STARTFILE_PREFIX_1 "${SYSTEMLIBS}"
 #define STANDARD_STARTFILE_PREFIX_2 "${SYSTEMLIBS1}"
 #define SYSTEMLIBS_DIR "${SYSTEMLIBS}"
+#define TARGET_RELOCATE_PREFIX "${TARGET_RELOCATE_PREFIX}"
 #endif /* ! GCC_DEFAULTS_H */
 _EOF
 	mv ${B}/gcc/defaults.h.new ${B}/gcc/defaults.h

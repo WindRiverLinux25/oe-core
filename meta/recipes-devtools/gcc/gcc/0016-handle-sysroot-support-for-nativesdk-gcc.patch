@@ -389,7 +389,7 @@ index e3e9374d1cc..b080609341b 100644
  #endif
  static const char *target_system_root = DEFAULT_TARGET_SYSTEM_ROOT;
  
-+static char target_relocatable_prefix[4096] __attribute__ ((section (".gccrelocprefix"))) = SYSTEMLIBS_DIR;
++static char target_relocatable_prefix[4096] __attribute__ ((section (".gccrelocprefix"))) = TARGET_RELOCATE_PREFIX;
 +
  /* Nonzero means pass the updated target_system_root to the compiler.  */
  

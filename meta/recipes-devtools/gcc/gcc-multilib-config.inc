@@ -172,6 +172,17 @@ python gcc_multilib_setup() {
     target_arch = (d.getVar('TARGET_ARCH_MULTILIB_ORIGINAL') if mlprefix
                     else d.getVar('TARGET_ARCH'))
     if pn == "nativesdk-gcc":
+        sdk_arch = d.getVar('SDK_ARCH')
+        if sdk_arch in ['x86_64', 'i686', 'i586']:
+            libdir32 = '%r/lib'
+            if sdk_arch == 'x86_64':
+                libdir64 = '%r/' + d.getVar('baselib')
+                osdirnames = ['../'+d.getVar('baselib') ,'../lib']
+            else:
+                libdir64 = '%r/lib64'
+                osdirnames = ['../lib64', '../lib']
+            target_config_files = gcc_target_config_files[d.getVar("SDK_ARCH")]
+            write_config(builddir, target_config_files, ['m64', 'm32'], ['64', '32'], osdirnames)
         header_config_files = gcc_header_config_files[d.getVar("SDK_ARCH")]
         write_headers(builddir, header_config_files, libdir32, libdir64, libdirx32, libdirn32)
         return
