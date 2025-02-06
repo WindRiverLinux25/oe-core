@@ -99,6 +99,7 @@ def preferred_ml_updates(d):
             localdata = bb.data.createCopy(d)
             override = ":virtclass-multilib-" + p
             localdata.setVar("OVERRIDES", localdata.getVar("OVERRIDES", False) + override)
+            localdata.need_overrides()
             newname = localdata.expand(prov)
             if newname != prov and not d.getVar(newname, False):
                 d.setVar(newname, localdata.expand(newval))
