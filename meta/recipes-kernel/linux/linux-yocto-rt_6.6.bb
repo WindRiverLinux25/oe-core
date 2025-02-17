@@ -19,6 +19,7 @@ SRCREV_meta ?= "078f986aa4c328285abd0181cc21724d832a3ae0"
 
 SRC_URI = "git://git.yoctoproject.org/linux-yocto.git;branch=${KBRANCH};name=machine;protocol=https \
            git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-6.6;destsuffix=${KMETA};protocol=https"
+SRC_URI += "file://0001-tools-power-x86-intel-speed-select-Prefix-header-sea.patch"
 
 LINUX_VERSION ?= "6.6.74"
 
