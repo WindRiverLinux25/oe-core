@@ -15,6 +15,7 @@ SRC_URI = "${DEBIAN_MIRROR}/main/a/apt/${BPN}_${PV}.tar.xz \
            file://0001-aptwebserver.cc-Include-array.patch \
            file://0001-Remove-using-std-binary_function.patch \
            file://0001-strutl-Add-missing-include-cstdint-gcc-15.patch \
+           file://0001-strutl.cc-the-filename-can-t-be-longer-than-255.patch \
            "
 
 SRC_URI:append:class-native = " \
