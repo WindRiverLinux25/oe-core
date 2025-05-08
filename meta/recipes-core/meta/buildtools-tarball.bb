@@ -68,6 +68,8 @@ create_sdk_files:append () {
 	rm -f ${SDK_OUTPUT}/${SDKPATH}/environment-setup-*
 	rm -f ${SDK_OUTPUT}/${SDKPATH}/version-*
 
+	cp ${COREBASE}/scripts/file.py ${SDK_OUTPUT}/${SDKPATH}/
+
 	# Generate new (mini) sdk-environment-setup file
 	script=${1:-${SDK_OUTPUT}/${SDKPATH}/environment-setup-${SDK_SYS}}
 	touch $script

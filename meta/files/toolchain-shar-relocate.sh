@@ -57,9 +57,15 @@ fi
 
 # replace @SDKPATH@ with the new prefix in all text files: configs/scripts/etc.
 # replace the host perl with SDK perl.
+file_version=$(file --version | head -n 1)
+if [ "$file_version" = "file-5.46" ];then
+    file_cmd="$target_sdk_dir/file.py"
+else
+    file_cmd="file"
+fi
 for replace in "$target_sdk_dir -maxdepth 1" "$native_sysroot"; do
 	$SUDO_EXEC find $replace -type f
-done | xargs -d '\n' -n100 file | \
+done | xargs -d '\n' -n100 $file_cmd | \
     awk -F': ' '{if (match($2, ".*(ASCII|script|source).*text")) {printf "\"%s\"\n", $1}}' | \
     grep -Fv -e "$target_sdk_dir/environment-setup-" \
              -e "$target_sdk_dir/relocate_sdk" \

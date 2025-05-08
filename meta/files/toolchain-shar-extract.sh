@@ -11,6 +11,16 @@ INIT_PYTHON=$(command -v python3 2>/dev/null )
 [ -z "$INIT_PYTHON" ] && INIT_PYTHON=$(command -v python2 2>/dev/null)
 [ -z "$INIT_PYTHON" ] && echo "Error: The SDK needs a python installed" && exit 1
 
+file_version=$(file --version | head -n 1)
+if [ "$file_version" = "file-5.46" ];then
+    if ! python3 -c "import magic" &> /dev/null; then
+        echo "Error: The SDK needs file command, but the version 5.46 on this host has an issue:"
+        echo "Error: https://bugs.astron.com/view.php?id=638, so please upgrade file to 5.46+ or"
+        echo "Error: install python3-magic as a replacement"
+        exit 1
+    fi
+fi
+
 # Remove invalid PATH elements first (maybe from a previously setup toolchain now deleted
 PATH=`$INIT_PYTHON -c 'import os; print(":".join(e for e in os.environ["PATH"].split(":") if os.path.exists(e)))'`
 
@@ -299,7 +309,7 @@ fi
 # delete the relocating script, so that user is forced to re-run the installer
 # if he/she wants another location for the sdk
 if [ $savescripts = 0 ] ; then
-	$SUDO_EXEC rm -f ${env_setup_script%/*}/relocate_sdk.py ${env_setup_script%/*}/relocate_sdk.sh
+	$SUDO_EXEC rm -f ${env_setup_script%/*}/relocate_sdk.py ${env_setup_script%/*}/relocate_sdk.sh ${env_setup_script%/*}/file.py
 fi
 
 # Execute post-relocation script
