@@ -84,15 +84,15 @@ EXTRA_OECMAKE += "-DLLVM_ENABLE_ASSERTIONS=OFF \
 EXTRA_OECMAKE:append:class-target = "\
                   -DCMAKE_CROSSCOMPILING:BOOL=ON \
                   -DLLVM_HOST_TRIPLE=${TARGET_SYS} \
-                  -DLLVM_TABLEGEN=${STAGING_BINDIR_NATIVE}/llvm-tblgen${PV} \
-                  -DLLVM_CONFIG_PATH=${STAGING_BINDIR_NATIVE}/llvm-config${PV} \
+                  -DLLVM_TABLEGEN=${STAGING_BINDIR_NATIVE}/llvm-tblgen \
+                  -DLLVM_CONFIG_PATH=${STAGING_BINDIR_NATIVE}/llvm-config \
                  "
 
 EXTRA_OECMAKE:append:class-nativesdk = "\
                   -DCMAKE_CROSSCOMPILING:BOOL=ON \
                   -DLLVM_HOST_TRIPLE=${SDK_SYS} \
-                  -DLLVM_TABLEGEN=${STAGING_BINDIR_NATIVE}/llvm-tblgen${PV} \
-                  -DLLVM_CONFIG_PATH=${STAGING_BINDIR_NATIVE}/llvm-config${PV} \
+                  -DLLVM_TABLEGEN=${STAGING_BINDIR_NATIVE}/llvm-tblgen \
+                  -DLLVM_CONFIG_PATH=${STAGING_BINDIR_NATIVE}/llvm-config \
                  "
 
 # patch out build host paths for reproducibility
