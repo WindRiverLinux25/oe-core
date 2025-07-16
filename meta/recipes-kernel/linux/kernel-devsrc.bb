@@ -211,6 +211,10 @@ do_install() {
         fi
 
         if [ "${ARCH}" = "powerpc" ]; then
+            # 4.18+ needs these files for MPROFILE_KERNEL, but don't error if they aren't present in the source
+            # See https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=abba759796f9b73eb24df9b734dd063839fc62e0
+            cp -a --parents arch/powerpc/tools $kerneldir/build/ 2>/dev/null || :
+
             # 5.0 needs these files, but don't error if they aren't present in the source
             cp -a --parents arch/${ARCH}/kernel/syscalls/syscall.tbl $kerneldir/build/ 2>/dev/null || :
             cp -a --parents arch/${ARCH}/kernel/syscalls/syscalltbl.sh $kerneldir/build/ 2>/dev/null || :
