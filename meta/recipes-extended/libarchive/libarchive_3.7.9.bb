@@ -30,8 +30,14 @@ PACKAGECONFIG[zstd] = "--with-zstd,--without-zstd,zstd,"
 EXTRA_OECONF += "--enable-largefile --without-iconv"
 
 SRC_URI = "https://libarchive.org/downloads/libarchive-${PV}.tar.gz \
-		   file://CVE-2025-5914.patch \
-		   "
+           file://CVE-2025-5914.patch \
+           file://CVE-2025-5915.patch \
+           file://CVE-2025-5916.patch \
+           file://CVE-2025-5917.patch \
+           file://0001-Improve-lseek-handling-2564.patch \
+           file://CVE-2025-5918-01.patch \
+           file://CVE-2025-5918-02.patch \
+           "
 
 UPSTREAM_CHECK_URI = "http://libarchive.org/"
 
