@@ -14,7 +14,9 @@ PE = "1"
 # repo during parse
 SRCREV = "6d41f0a39d6423c8e57e92ebbe9f8c0333a63f72"
 
-SRC_URI = "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master"
+SRC_URI = "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master \
+           file://CVE-2024-42040.patch \
+"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
