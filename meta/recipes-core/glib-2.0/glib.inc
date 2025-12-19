@@ -231,6 +231,8 @@ SRC_URI = "${GNOME_MIRROR}/glib/${SHRT_VER}/glib-${PV}.tar.xz \
            file://skip-timeout.patch \
            file://CVE-2025-6052-1.patch \
            file://CVE-2025-6052-2.patch \
+           file://CVE-2025-13601-0001.patch \
+           file://CVE-2025-13601-0002.patch \
            "
 SRC_URI:append:class-native = " file://relocate-modules.patch \
                                 file://0001-meson.build-do-not-enable-pidfd-features-on-native-g.patch \
@@ -268,3 +270,5 @@ def find_meson_cross_files(d):
 python () {
     find_meson_cross_files(d)
 }
+
+
