@@ -32,6 +32,7 @@ inherit gnomebase gettext upstream-version-is-even gio-module-cache ptest-gnome
 SRC_URI += "file://run-ptest \
             file://eagain.patch \
             file://CVE-2025-60018.patch \
+            file://CVE-2025-60019.patch \
             "
 
 FILES:${PN} += "\
