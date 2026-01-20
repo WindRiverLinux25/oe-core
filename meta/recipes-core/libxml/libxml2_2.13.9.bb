@@ -15,6 +15,7 @@ GNOMEBASEBUILDCLASS = "autotools"
 inherit gnomebase
 
 SRC_URI += "http://www.w3.org/XML/Test/xmlts20130923.tar;subdir=${BP};name=testtar \
+           file://CVE-2026-0990.patch \
            file://run-ptest \
            file://install-tests.patch \
            "
