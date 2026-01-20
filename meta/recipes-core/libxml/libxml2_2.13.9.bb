@@ -17,13 +17,9 @@ inherit gnomebase
 SRC_URI += "http://www.w3.org/XML/Test/xmlts20130923.tar;subdir=${BP};name=testtar \
            file://run-ptest \
            file://install-tests.patch \
-           file://CVE-2025-6021.patch \
-           file://CVE-2025-49794_CVE-2025-49796.patch \
-           file://CVE-2025-49795.patch \
-           file://CVE-2025-6170.patch \
            "
 
-SRC_URI[archive.sha256sum] = "277294cb33119ab71b2bc81f2f445e9bc9435b893ad15bb2cd2b0e859a0ee84a"
+SRC_URI[archive.sha256sum] = "a2c9ae7b770da34860050c309f903221c67830c86e4a7e760692b803df95143a"
 SRC_URI[testtar.sha256sum] = "c6b2d42ee50b8b236e711a97d68e6c4b5c8d83e69a2be4722379f08702ea7273"
 
 # Disputed as a security issue, but fixed in d39f780
