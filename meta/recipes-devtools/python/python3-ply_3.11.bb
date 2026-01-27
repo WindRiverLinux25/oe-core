@@ -8,6 +8,10 @@ LIC_FILES_CHKSUM = "file://README.md;beginline=5;endline=32;md5=f5ee5c355c0e6719
 SRC_URI[md5sum] = "6465f602e656455affcd7c5734c638f8"
 SRC_URI[sha256sum] = "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
 
+SRC_URI += " \
+    file://CVE-2025-56005.patch \
+"
+
 inherit pypi setuptools3
 
 RDEPENDS:${PN}:class-target += "\
