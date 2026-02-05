@@ -8,6 +8,8 @@ SRC_URI[sha256sum] = "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666ab
 
 inherit python_flit_core pypi
 
+SRC_URI += "file://CVE-2026-24049.patch"
+
 BBCLASSEXTEND = "native nativesdk"
 
 # This used to use the bootstrap install which didn't compile. Until we bump the
