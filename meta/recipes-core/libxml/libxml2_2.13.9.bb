@@ -20,6 +20,7 @@ SRC_URI += "http://www.w3.org/XML/Test/xmlts20130923.tar;subdir=${BP};name=testt
            file://CVE-2026-0989-0001.patch \
            file://CVE-2026-0989-0002.patch \
            file://CVE-2026-0989-0003.patch \
+           file://CVE-2026-1757.patch \
            file://run-ptest \
            file://install-tests.patch \
            "
