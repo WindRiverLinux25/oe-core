@@ -56,6 +56,8 @@ SRC_URI = "https://busybox.net/downloads/busybox-${PV}.tar.bz2;name=tarball \
            file://CVE-2023-39810.patch \
            file://CVE-2025-46394-01.patch \
            file://CVE-2025-46394-02.patch \
+           file://0001-tar-strip-unsafe-hardlink-components-GNU-tar-does-th.patch \
+           file://0002-tar-only-strip-unsafe-components-from-hardlinks-not-.patch \
            "
 SRC_URI:append:libc-musl = " file://musl.cfg"
 SRC_URI:append:x86-64 = " file://sha_accel.cfg"
