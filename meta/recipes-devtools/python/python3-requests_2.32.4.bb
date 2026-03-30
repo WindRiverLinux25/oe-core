@@ -5,6 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=34400b68072d710fecd0a2940a0d1658"
 
 SRC_URI:append:class-nativesdk = " \
            file://environment.d-python3-requests.sh \
+           file://CVE-2026-25645.patch \
 "
 
 SRC_URI[sha256sum] = "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
