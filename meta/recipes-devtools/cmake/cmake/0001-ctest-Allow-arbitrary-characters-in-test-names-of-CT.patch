@@ -1,4 +1,4 @@
-From c7e8b03324883760a2d6fab86ae034beb82af651 Mon Sep 17 00:00:00 2001
+From 1a7ccf1df28ce93a1cc373ece4897b95b21aa2ae Mon Sep 17 00:00:00 2001
 From: John Drouhard <john@drouhard.dev>
 Date: Thu, 9 Jan 2025 20:34:42 -0600
 Subject: [PATCH] ctest: Allow arbitrary characters in test names of
@@ -27,7 +27,7 @@ Signed-off-by: Moritz Haase <Moritz.Haase@bmw.de>
  3 files changed, 61 insertions(+), 23 deletions(-)
 
 diff --git a/Source/CTest/cmCTestMultiProcessHandler.cxx b/Source/CTest/cmCTestMultiProcessHandler.cxx
-index 84ea32b84d40025ec333a90d30c42eeaf7adc9ef..231e7b5f39b1d8aa75f4e59a890a099b53fcdaac 100644
+index c9dfca69..1a787ea1 100644
 --- a/Source/CTest/cmCTestMultiProcessHandler.cxx
 +++ b/Source/CTest/cmCTestMultiProcessHandler.cxx
 @@ -20,6 +20,7 @@
@@ -164,7 +164,7 @@ index 84ea32b84d40025ec333a90d30c42eeaf7adc9ef..231e7b5f39b1d8aa75f4e59a890a099b
    int index = -1;
  
 diff --git a/Source/CTest/cmCTestMultiProcessHandler.h b/Source/CTest/cmCTestMultiProcessHandler.h
-index fd6c17f2fac06949c20f3792dd3eae442b15850b..811be613c3387240c0181f8372b24cf09219621f 100644
+index fd6c17f2..811be613 100644
 --- a/Source/CTest/cmCTestMultiProcessHandler.h
 +++ b/Source/CTest/cmCTestMultiProcessHandler.h
 @@ -13,6 +13,7 @@
@@ -185,7 +185,7 @@ index fd6c17f2fac06949c20f3792dd3eae442b15850b..811be613c3387240c0181f8372b24cf0
    void CreateTestCostList();
  
 diff --git a/Tests/CTestTestScheduler/CMakeLists.txt b/Tests/CTestTestScheduler/CMakeLists.txt
-index 6f8cb4dbc0de35984540e1868788e0a02124e819..daf6ce2b23d8c048334ae1047759130b246dccef 100644
+index 6f8cb4db..daf6ce2b 100644
 --- a/Tests/CTestTestScheduler/CMakeLists.txt
 +++ b/Tests/CTestTestScheduler/CMakeLists.txt
 @@ -1,9 +1,9 @@
