@@ -1,4 +1,4 @@
-From 3dc621792d9f4064af189eb7d1e2c6fee7772b58 Mon Sep 17 00:00:00 2001
+From 22d506bc34230e99554c3580691337b33ea119a4 Mon Sep 17 00:00:00 2001
 From: William Lyu <William.Lyu@windriver.com>
 Date: Fri, 20 Oct 2023 16:22:37 -0400
 Subject: [PATCH] Added handshake history reporting when test fails
@@ -362,6 +362,3 @@ index 27b4415..64a13c0 100644
      return ret;
  }
  
--- 
-2.34.1
-
