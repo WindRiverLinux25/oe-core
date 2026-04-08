@@ -1,4 +1,4 @@
-From f5125725e4e2e250ccc78a17a8b77431100e7c15 Mon Sep 17 00:00:00 2001
+From df1c31697f79223de930b1d58a8e3895b827805c Mon Sep 17 00:00:00 2001
 From: Armin kuster <akuster808@gmail.com>
 Date: Wed, 14 Oct 2020 22:48:31 -0700
 Subject: [PATCH] Busybox does not support ps -p so use pgrep
@@ -16,10 +16,10 @@ Signed-off-by: Trevor Gamblin <tgamblin@baylibre.com>
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/src/bin/keactrl/keactrl.in b/src/bin/keactrl/keactrl.in
-index cccfdac303..20ae2e6ec5 100644
+index f99e8d8..78f84ec 100644
 --- a/src/bin/keactrl/keactrl.in
 +++ b/src/bin/keactrl/keactrl.in
-@@ -146,8 +146,8 @@ check_running() {
+@@ -150,8 +150,8 @@ check_running() {
      # Get the PID from the PID file (if it exists)
      get_pid_from_file "${proc_name}"
      if [ ${_pid} -gt 0 ]; then
@@ -30,6 +30,3 @@ index cccfdac303..20ae2e6ec5 100644
              # No error, so PID IS ALIVE
              _running=1
          fi
--- 
-2.39.2
-

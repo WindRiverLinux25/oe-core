@@ -1,4 +1,4 @@
-From 72d7e6c0b6b5af4fea2e4db9ed33757984ccdc5b Mon Sep 17 00:00:00 2001
+From f654635d80c590b17084fabe5c5ed7d910ce8b86 Mon Sep 17 00:00:00 2001
 From: Razvan Becheriu <razvan@isc.org>
 Date: Fri, 14 Jun 2024 17:09:50 +0300
 Subject: [PATCH] make kea environment available to lfc
@@ -16,10 +16,10 @@ Signed-off-by: Yi Zhao <yi.zhao@windriver.com>
  create mode 100644 src/lib/dhcpsrv/tests/test_kea_lfc_env.sh.in
 
 diff --git a/configure.ac b/configure.ac
-index c00edb5..7b572b0 100644
+index dc90b85..547e302 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -1629,6 +1629,8 @@ AC_CONFIG_FILES([src/lib/dhcp_ddns/tests/Makefile])
+@@ -1633,6 +1633,8 @@ AC_CONFIG_FILES([src/lib/dhcp_ddns/tests/Makefile])
  AC_CONFIG_FILES([src/lib/dhcpsrv/Makefile])
  AC_CONFIG_FILES([src/lib/dhcpsrv/tests/Makefile])
  AC_CONFIG_FILES([src/lib/dhcpsrv/tests/test_libraries.h])
@@ -29,7 +29,7 @@ index c00edb5..7b572b0 100644
  AC_CONFIG_FILES([src/lib/dns/Makefile])
  AC_CONFIG_FILES([src/lib/dns/tests/Makefile])
 diff --git a/src/lib/dhcpsrv/memfile_lease_mgr.cc b/src/lib/dhcpsrv/memfile_lease_mgr.cc
-index db4f5d5..0ecf3e7 100644
+index fb38541..fca7886 100644
 --- a/src/lib/dhcpsrv/memfile_lease_mgr.cc
 +++ b/src/lib/dhcpsrv/memfile_lease_mgr.cc
 @@ -209,7 +209,8 @@ LFCSetup::setup(const uint32_t lfc_interval,
@@ -43,10 +43,10 @@ index db4f5d5..0ecf3e7 100644
      // If we've been told to run it once now, invoke the callback directly.
      if (run_once_now) {
 diff --git a/src/lib/dhcpsrv/tests/memfile_lease_mgr_unittest.cc b/src/lib/dhcpsrv/tests/memfile_lease_mgr_unittest.cc
-index 034f1f5..9edf637 100644
+index aa7c345..5ed5a58 100644
 --- a/src/lib/dhcpsrv/tests/memfile_lease_mgr_unittest.cc
 +++ b/src/lib/dhcpsrv/tests/memfile_lease_mgr_unittest.cc
-@@ -534,6 +534,32 @@ TEST_F(MemfileLeaseMgrTest, lfcTimer) {
+@@ -607,6 +607,32 @@ TEST_F(MemfileLeaseMgrTest, lfcTimer) {
      EXPECT_EQ(2, lease_mgr->getLFCCount());
  }
  
@@ -91,6 +91,3 @@ index 0000000..3eb71d5
 +    exit 0
 +fi
 +exit 1
--- 
-2.25.1
-
