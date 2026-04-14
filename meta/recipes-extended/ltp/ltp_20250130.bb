@@ -32,6 +32,7 @@ SRC_URI = "git://github.com/linux-test-project/ltp.git;branch=master;protocol=ht
            file://0001-kernel-kvm-don-t-hardcode-objcopy.patch \
            file://0001-cve-2015-3290-Disable-AVX-for-x86_64.patch \
            file://0001-syscalls-semctl08-Skip-semctl08-when-__USE_TIME64_RE.patch \ 
+           file://0001-syscalls-epoll_ctl04-add-ELOOP-to-expected-errnos.patch \
           "
 
 S = "${WORKDIR}/git"
