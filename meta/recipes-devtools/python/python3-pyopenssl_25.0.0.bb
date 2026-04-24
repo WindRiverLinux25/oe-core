@@ -9,6 +9,8 @@ SRC_URI[sha256sum] = "cd2cef799efa3936bb08e8ccb9433a575722b9dd986023f1cabc4ae64e
 
 inherit pypi setuptools3
 
+SRC_URI += "file://CVE-2026-27448.patch"
+
 PACKAGES =+ "${PN}-tests"
 FILES:${PN}-tests = "${libdir}/${PYTHON_DIR}/site-packages/OpenSSL/test"
 
