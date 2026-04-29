@@ -9,21 +9,21 @@ SECTION = "console/network"
 LICENSE = "curl"
 LIC_FILES_CHKSUM = "file://COPYING;md5=72f4e9890e99e68d77b7e40703d789b8"
 
-SRC_URI = " \
-    https://curl.se/download/${BP}.tar.xz \
-    file://run-ptest \
-    file://disable-tests \
-    file://no-test-timeout.patch \
-    file://CVE-2025-9086.patch \
-    file://CVE-2025-10148.patch \
-    file://CVE-2025-13034.patch \
-    file://CVE-2025-14017.patch \
-    file://CVE-2025-14524.patch \
-    file://CVE-2025-14819_1.patch \
-    file://CVE-2025-14819_2.patch \
-    file://CVE-2025-15079.patch \
-    file://CVE-2025-15224.patch \
-"
+SRC_URI = "https://curl.se/download/${BP}.tar.xz \
+           file://run-ptest \
+           file://disable-tests \
+           file://no-test-timeout.patch \
+           file://CVE-2025-9086.patch \
+           file://CVE-2025-10148.patch \
+           file://CVE-2025-13034.patch \
+           file://CVE-2025-14017.patch \
+           file://CVE-2025-14524.patch \
+           file://CVE-2025-14819_1.patch \
+           file://CVE-2025-14819_2.patch \
+           file://CVE-2025-15079.patch \
+           file://CVE-2025-15224.patch \
+           file://CVE-2026-3783.patch \
+           "
 
 SRC_URI:append:class-nativesdk = " \
            file://environment.d-curl.sh \
