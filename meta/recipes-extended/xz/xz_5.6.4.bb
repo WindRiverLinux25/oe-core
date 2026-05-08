@@ -27,6 +27,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=c02de712b028a5cc7e22472e8f2b3db1 \
 
 SRC_URI = "https://github.com/tukaani-project/xz/releases/download/v${PV}/xz-${PV}.tar.gz \
            file://run-ptest \
+           file://CVE-2026-34743.patch \
            file://CVE-2025-31115-01.patch \
            file://CVE-2025-31115-02.patch \
            file://CVE-2025-31115-03.patch \
