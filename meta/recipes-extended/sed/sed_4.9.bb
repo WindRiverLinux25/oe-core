@@ -10,6 +10,7 @@ SECTION = "console/utils"
 SRC_URI = "${GNU_MIRROR}/sed/sed-${PV}.tar.xz \
            file://run-ptest \
 "
+SRC_URI += "file://0001-sed-i-follow-symlinks-fix-TOCTOU-race-CVE-2026-5958.patch"
 
 SRC_URI[sha256sum] = "6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181"
 
