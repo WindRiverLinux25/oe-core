@@ -193,6 +193,10 @@ do_install:append:class-native () {
     done
 }
 
+do_install_ptest:append() {
+    rm -rf ${D}${PTEST_PATH}/cpan/Compress-Raw-Zlib/zlib-src
+}
+
 PACKAGE_PREPROCESS_FUNCS += "perl_package_preprocess"
 
 perl_package_preprocess () {
