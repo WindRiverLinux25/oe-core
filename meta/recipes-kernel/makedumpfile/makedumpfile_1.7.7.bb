@@ -26,6 +26,7 @@ FILES:${PN}-tools = "${bindir}/*.pl"
 SRC_URI = "\
     git://github.com/makedumpfile/makedumpfile;branch=${SRCBRANCH};protocol=https \
     file://0001-makedumpfile-replace-hardcode-CFLAGS.patch \
+    file://0001-arm64-Add-5-level-page-table-support-for-4K-pages-wi.patch \
 "
 
 S = "${WORKDIR}/git"
