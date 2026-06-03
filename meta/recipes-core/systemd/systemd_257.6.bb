@@ -32,6 +32,8 @@ SRC_URI += " \
            file://0001-serial-getty-.service-Allow-device-to-fast-fail-if-i.patch \
            file://CVE-2026-40226-01.patch \
            file://CVE-2026-40226-02.patch \
+           file://CVE-2026-40225-01.patch \
+           file://CVE-2026-40225-02.patch \
            "
 
 # patches needed by musl
