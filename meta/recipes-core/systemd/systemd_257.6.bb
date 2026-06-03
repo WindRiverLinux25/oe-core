@@ -30,6 +30,8 @@ SRC_URI += " \
            file://0002-implment-systemd-sysv-install-for-OE.patch \
            file://0001-Do-not-create-var-log-README.patch \
            file://0001-serial-getty-.service-Allow-device-to-fast-fail-if-i.patch \
+           file://CVE-2026-40226-01.patch \
+           file://CVE-2026-40226-02.patch \
            "
 
 # patches needed by musl
