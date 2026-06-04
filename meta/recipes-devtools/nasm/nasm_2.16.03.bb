@@ -10,6 +10,7 @@ SRC_URI = "http://www.nasm.us/pub/nasm/releasebuilds/${PV}/nasm-${PV}.tar.bz2 \
            file://0002-Add-debug-prefix-map-option.patch \
            file://CVE-2023-31722-1.patch \
            file://CVE-2023-31722-2.patch \
+           file://CVE-2025-8844.patch \
            "
 
 SRC_URI[sha256sum] = "bef3de159bcd61adf98bb7cc87ee9046e944644ad76b7633f18ab063edb29e57"
