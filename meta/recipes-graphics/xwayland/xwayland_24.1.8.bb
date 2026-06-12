@@ -14,6 +14,7 @@ SRC_URI = "https://www.x.org/archive/individual/xserver/xwayland-${PV}.tar.xz \
            file://0002-xkb-Make-the-RT_XKBCLIENT-resource-private.patch \
            file://0003-xkb-Free-the-XKB-resource-when-freeing-XkbInterest.patch \
            file://0004-xkb-Prevent-overflow-in-XkbSetCompatMap.patch \
+           file://CVE-2026-34000.patch \
            "
 SRC_URI[sha256sum] = "c8908d57c8ed9ceb8293c16ba7ad5af522efaf1ba7e51f9e4cf3c0774d199907"
 
